@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="Set.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		const set = new Set();
+		set.add("abc");
+		set.add("acc");
+		set.add("adc");
+		set.add("agc");
+		set.add("agc");	
+		alert(set.values()); // abc acc adc agc
+		
+		set.remove("acc"); 
+		alert(set.values()); // abc adc agc
+		
+		alert(set.has("agc")); // true
+		
+		alert(set.size()); // 3
+		set.clear();
+		alert(set.size()); // 0
+	</script>
+</html>

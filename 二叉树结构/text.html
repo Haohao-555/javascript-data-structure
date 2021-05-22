@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="./BinaryTree.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		const nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13]
+		const binaryTree = new BinaryTree()
+		nodes.forEach(function(key) {
+			binaryTree.insert(key)
+		})
+		
+		//中序遍历
+		binaryTree.inOrderTraverse()
+		console.log("------")
+		
+		//前序遍历
+		binaryTree.preOrderTraverse()
+		console.log("------")
+		
+		//后序遍历
+		binaryTree.postOrderTraverse()
+		console.log("------")
+		
+		//最小值
+		const minNode = binaryTree.min()
+		console.log(minNode)
+		
+		//最小值
+		const maxNode = binaryTree.max()
+		console.log(maxNode)
+		
+		//查找特定值
+		console.log(binaryTree.search(8) ? '值存在' : '值不存在')
+		console.log(binaryTree.search(16) ? '值存在' : '值不存在')
+		
+		//删除结点
+		binaryTree.remove(3)
+		console.log("删除后")
+		binaryTree.inOrderTraverse()
+	</script>
+</html>

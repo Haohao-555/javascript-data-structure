@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="./LinkedList.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		const linkedList = new LinkedList();
+		
+		// 向列表尾部添加一个新的项
+		linkedList.append("adc");
+		linkedList.append("acc");
+		linkedList.append("avc");
+		linkedList.append("ade");
+		linkedList.append("afc");
+		
+		// toString 方法
+		alert(linkedList); // adc acc avc ade afc
+		
+		// 获取对应位置的元素
+		alert(linkedList.get(5)); // null
+		
+		// 返回元素在列表中的索引，如果列表中没有该元素则返回 -1
+		alert(linkedList.indexOf("acc")) // 0
+		alert(linkedList.indexOf("add")) // -1
+		
+		// 向列表的特定位置插入一个新的项
+		linkedList.insert(5, "aaa");
+		alert(linkedList); // adc acc avc ade afc aaa
+		
+		// 修改某个位置的元素
+		linkedList.update(4,"bbb");
+		alert(linkedList); // adc acc avc ade bbb aaa 
+		
+		// 从列表的特定位置移除一项
+		linkedList.removeAt(3);
+		alert(linkedList); // adc acc avc  bbb aaa 
+		
+		// 从列表中移除一项
+		linkedList.remove("acc");  
+		alert(linkedList); // adc avc  bbb aaa 
+		
+		// 如果链表中不包含任何元素，返回 true
+		alert(linkedList.isEmpty()); // false
+		
+		// 返回链表包含的元素个数
+		alert(linkedList.size()); // 4
+	</script>
+</html>

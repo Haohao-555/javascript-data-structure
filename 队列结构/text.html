@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>队列的封装（使用数组进行封装）</title>
+	</head>
+	<body>
+		<script src="./Queue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// 创建队列
+			const queue = new Queue();
+			
+			// 入队
+			queue.enqueue(1);
+			queue.enqueue(2);
+			queue.enqueue(3);
+			queue.enqueue(4);
+			queue.enqueue(5);
+			
+			// 出队
+			console.log(queue.inqueue()); // 1
+			
+            // 查看队头元素
+			console.log(queue.front()); // 2
+			
+			// 判断队列是否为空
+			console.log(queue.isEmpty()); // false
+			
+			// 查看队列长度
+			console.log(queue.size()); // 4
+			
+			// toString 方法
+			console.log(queue.toString()); //2345
+			
+			// 遍历队列
+			while(!queue.isEmpty()){
+				console.log(queue.inqueue()); //2345
+			}
+		</script>
+	</body>
+</html>

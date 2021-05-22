@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>栈的封装（使用数组进行封装）</title>
+	</head>
+	<body>
+	</body>
+	<script src="./Stack.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// 创建栈
+		const stack = new Stack();
+		
+		// 入栈
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		stack.push(4);
+		stack.push(5);
+		
+		// 出栈
+		console.log(stack.pop());  // 5
+		
+		// 查看栈顶元素
+		console.log(stack.peek()); // 4
+		
+		// 判断栈是否为空
+		console.log(stack.isEmty()); // false
+		
+		// 查看栈长度
+		console.log(stack.size()); // 4
+		
+		// toString 方法
+		console.log(stack.toString()); // 1234
+		
+		// 遍历栈
+		while(!stack.isEmty()) {
+			console.log(stack.pop()); // 4321
+		}
+	</script>
+</html>

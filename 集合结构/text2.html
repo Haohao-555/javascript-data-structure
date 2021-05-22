@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="Set.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		let setA = new Set();
+		setA.add("abc");
+		setA.add("cba");
+		setA.add("nba");
+
+		let setB = new Set();
+		setB.add("aaa");
+		setB.add("cba");
+		setB.add("nba");
+
+		unionSet = setA.union(setB);
+		alert(unionSet.values());  // abc cba nbc aaa
+		
+		intersectionSet = setA.intersection(setB);
+		alert(intersectionSet.values()); // abc nba
+		
+		differentSet = setA.difference(setB);
+		alert(differentSet.values()); // abc
+		
+		// 判断 setA 是不是 setB 的子集
+		const flag = setA.subset(setB);
+		alert(flag); // false
+	</script>
+</html>

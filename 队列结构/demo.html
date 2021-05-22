@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>击鼓传花</title>
+	</head>
+	<body>
+	</body>
+	<script src="./Queue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*
+		  所有人围在一个圈内，循环念数字，念到目标数，则退出圈子，下一个人重新念数字，直到剩下一个人。
+		*/
+		function game(nameList, num) {
+			const queue = new Queue()
+			
+			// 入队
+			nameList.forEach(name => {
+				queue.enqueue(name)
+			})
+			
+			
+			while (queue.size() > 1) {
+				// 念数字
+				for (let i = 0; i < num-1; i++) {
+					// 出队
+					let name = queue.inqueue()
+					// 入队
+					queue.enqueue(name)
+				}
+				// 数到目标数，出队
+				queue.inqueue()
+			}
+			let curname = queue.front()  
+			alert("最终剩下："+curname) // Lilei
+			alert("在数组下标的"+nameList.indexOf(curname)) // 3
+		}
+		const nameList = [
+			'Lily', 'Lucy', 'Tom', 'Lilei', 'why' 
+		]
+		game(nameList, 3)
+		
+	</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="./DoublyLinkedList.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		const doublyLinkedList = new DoublyLinkedList();
+		
+		
+		// 插入数据
+		doublyLinkedList.append("abc");
+		doublyLinkedList.append("adc");
+		doublyLinkedList.append("afc");
+		doublyLinkedList.append("avc");
+		doublyLinkedList.append("acc");
+		
+		alert("反序"+doublyLinkedList.backwordString()); // acc avc afc adc abc
+		alert("正序"+doublyLinkedList.forwordString()); // abc adc afc avc acc
+		
+		// 特定位置插入一个新的项
+		doublyLinkedList.insert(3,"aaa"); 
+		alert(doublyLinkedList.forwordString()); // abc adc afc aaa avc acc
+		
+		// 获取对应位置的元素
+		alert(doublyLinkedList.get(3));  // aaa
+		
+		// 返回元素在列表中的索引
+		alert(doublyLinkedList.indexOf("aaa")); // 3
+		
+		// 修改某个位置的元素
+		doublyLinkedList.update(3,"bbb");
+		alert(doublyLinkedList.get(3)); // bbb
+		
+		// 从列表的特定位置移除一项
+		alert("删除前"+doublyLinkedList.forwordString()); // abc adc afc bbb avc acc
+		doublyLinkedList.removeAt(4);
+		alert("删除后"+doublyLinkedList.forwordString()); // abc adc afc bbb  acc
+		
+		// 从列表移除一项
+		doublyLinkedList.remove("bbb");
+		alert("删除后"+doublyLinkedList.forwordString()); // abc adc afc acc
+		
+		// 如果链表中不包含任何元素，返回 true
+		alert(doublyLinkedList.isEmpty()); // false
+		
+		// 返回链表包含的元素个数
+		alert(doublyLinkedList.size()); // 4
+		
+		// 获取链表的第一个元素
+		alert(doublyLinkedList.getHead()); // abc
+		
+		// 获取链表的最后一个元素
+		alert(doublyLinkedList.getTail()); // acc
+	</script>
+</html>
